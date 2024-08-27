@@ -1,0 +1,664 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+/* ================== alert responsive ================== */
+.small-screen-message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding:0 15px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 9999;
+}
+
+/* ================== header start ================== */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 11px 7rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: background-color 0.5s ease-in-out;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h2 a{
+    text-decoration: none;
+    color:#ffffff;
+}
+
+h2 span{
+    color: #b4a06b;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul{
+    margin: auto;
+    display: flex;
+    list-style-type: none;
+    gap: 1.4rem;
+}
+
+nav ul li .nav-link{
+    text-decoration: none;
+    font-weight: 350;
+    color: #ffffff;
+    transition: color 0.2s;
+}
+nav ul li .nav-link:hover{
+    color: #b4a06b;
+}
+nav ul li .nav-link.active {
+    font-weight: 500;
+    color: #b4a06b;
+}
+
+nav ul li a[class="btn-sgin"]{
+    text-decoration: none;
+    color: #b4a06b;
+    border:1px solid #b4a06b;
+    border-radius: 5px;
+    padding: 0.3rem 1.1rem;
+    transition: all 0.2s;
+}
+nav ul li a[class="btn-sgin"]:hover{
+    color: #ffffff;
+    background-color: #b4a06b;
+    border:1px solid #ffffff;
+}
+/* ================== header end ================== */
+
+/* ================== hero start ================== */
+main {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+main .hero-layers {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .main-content {
+    max-width: 50%;
+    margin-top: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #ffffff;
+    row-gap: 1.3rem;
+}
+main .main-content h3 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+main .main-content p{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-weight: 350;
+}
+
+main .main-content .animate-text {
+    width: fit-content;
+    align-self: center;
+    padding: 0 0.5rem;
+    border-right: 1px solid ;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(49),
+                cursor 0.5s step-end infinite alternate;
+}
+@keyframes cursor{
+    50%{border-color: transparent}
+}
+@keyframes typing{
+    from{width: 0 ;}
+    to { width: 69%; }
+}
+
+main .main-content p i{
+    text-decoration: unset;
+    font-size: 0.9rem;
+}
+main .main-content hr{
+    width: 70%;
+    margin: auto;
+    border: 1px solid #b4a06b;
+}
+main .main-content a{
+    margin-top: 0.6rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 350;
+    width: fit-content;
+    align-self: center;
+    background-color: #b4a06b;
+    color: #ffffff;
+    border:1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem 1.2rem;
+    transition:all 0.2s;
+}
+main .main-content a:hover{
+    background-color: #7a6841;
+}
+/* ================== hero end ================== */
+
+/* ================== first section start ================== */
+section[class="first-section"] {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section[class="first-section"] .content {
+    display: flex;
+    background-color: #F3F3F3;
+    justify-content: center;
+    width: 100%;
+}
+section[class="first-section"] .content .container {
+    padding: 3rem 7rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+section[class="first-section"] .content .container .kiri {
+    display: flex;
+    width: 50%;
+}
+section[class="first-section"] .content .container .kiri img{
+    margin: auto;
+    height: 100%;
+    width: 82%;
+}
+
+section[class="first-section"] .content .container .kanan {
+    width : 50%;
+    justify-content: center;
+    display: flex;
+}
+section[class="first-section"] .content .container .kanan .isi {
+    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+section[class="first-section"] .content .container .kanan .isi h3{
+    margin: none;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+section[class="first-section"] .content .container .kanan .isi hr{
+    width: 70%;
+    margin: none;
+    border: 1px solid #b4a06b;
+    white-space: nowrap;
+    overflow: hidden;
+}
+section[class="first-section"] .content .container .kanan .isi p{
+    font-size: 1rem;
+    max-width: 90%;
+    font-style: italic;
+    font-weight: 350;
+}
+/* ================== first section end ================== */
+
+/* ================== second section start ================== */
+section[class="second-section"] {
+    min-height: 100vh;
+    padding: 6rem 7rem;
+    margin-bottom: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+section[class="second-section"] .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.2rem;
+}
+section[class="second-section"] .head h3{
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+section[class="second-section"] .head p{
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 350;
+    text-transform: capitalize;
+}
+
+section[class="second-section"] .neck {
+    display: flex;
+    margin: 3rem 0;
+    padding: 0 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+section[class="second-section"] .neck h3{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+section[class="second-section"] .neck p{
+    font-size: 1rem;
+    font-weight: 350;
+    text-transform: capitalize;
+}
+
+section[class="second-section"] .body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+section[class="second-section"] .body .part {
+    box-sizing: border-box;
+    flex: 1 1 calc(50% - 1rem);
+    display: flex;
+    align-items: center;
+    max-width: 50%;
+    height: 100%;
+    padding: 1.4rem;
+}
+
+
+section[class="second-section"] .body .card {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition:all 0.5s ease-in-out;
+}
+section[class="second-section"] .body .card:hover {
+    background-color: #ecebeb;
+    
+}
+
+section[class="second-section"] .body .card .kiri {
+    position: relative;
+    overflow: hidden;
+    background-color: yellow;
+    width: 50%;
+    height: 410px;
+}
+
+section[class="second-section"] .body .card .kiri img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.6s ease-in-out;
+}
+section[class="second-section"] .body .card:hover .kiri img {
+    transform: scale(1.10);
+    filter: blur(2px);
+}
+section[class="second-section"] .body .card .kiri .img-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+}
+section[class="second-section"] .body .card:hover .kiri .img-layer {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+section[class="second-section"] .body .card .kanan{
+    width: 50%;
+}
+section[class="second-section"] .body .card .kanan .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 1.2rem 1.5rem;
+}
+
+section[class="second-section"] .body .card .kanan .content .kepala h3 {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+section[class="second-section"] .body .card .kanan .content .kepala p {
+    margin:none;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+section[class="second-section"] .body .card .kanan .content .deskripsi p{
+    font-size: 0.9rem;
+    font-weight: 350;
+}
+
+section[class="second-section"] .body .card .kanan .content .deskripsi a{
+    font-size: 1rem;
+    font-weight: 350;
+    text-transform: capitalize;
+    color: #b4a06b;
+    text-decoration: none;
+    position: relative;
+}
+section[class="second-section"] .body .card .kanan .content .deskripsi a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b4a06b;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-in-out;
+}
+section[class="second-section"] .body .card .kanan .content .deskripsi a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+section[class="second-section"] .body .card .kanan .content .location p{
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+section[class="second-section"] .body .part .links{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.2rem 0;
+    justify-content: space-between;
+    height: 400px;
+}
+
+section[class="second-section"] .body .part .links a{
+    position: relative;
+    text-decoration: none;
+}
+
+section[class="second-section"] .body .part .links .link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+section[class="second-section"] .body .part .links .link .link-layer{
+    padding: 2.2rem 3rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: first baseline;
+    transition: all 0.4s ease-in-out;
+}
+section[class="second-section"] .body .part .links .link .link-layer:hover{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+section[class="second-section"] .body .part .links .link .link-layer p{
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;
+    position: relative;
+}
+section[class="second-section"] .body .part .links a:hover p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    transition: transform 0.5s ease-in-out;
+}
+section[class="second-section"] .body .part .links p {
+    position: relative;
+    padding-bottom: 4px;
+}
+section[class="second-section"] .body .part .links p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease-in-out;
+}
+/* ================== second section end ================== */
+
+/* ================== third section start ================== */
+section[class="third-section"] {
+    background-image: url("../img/content/edwin-petrus-nR2Y5F1bC0I-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+section[class="third-section"] .resort-layers {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 0 8rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: first baseline;
+}
+
+section[class="third-section"] .main-content {
+    max-width: 100%;
+    margin-top: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #ffffff;
+    row-gap: 1.4rem;
+}
+section[class="third-section"] .main-content h3 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+section[class="third-section"] .main-content p{
+    text-transform: capitalize;
+    font-weight: 350;
+}
+section[class="third-section"] .main-content p i{
+    text-decoration: unset;
+    font-size: 1.1rem;
+}
+section[class="third-section"] .main-content hr{
+    width: 60%;
+    border: 1px solid #b4a06b;
+}
+section[class="third-section"] .main-content a{
+    margin-top: 0.6rem;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 350;
+    width: fit-content;
+    background-color: #b59f6b;
+    color: #ffffff;
+    border:1px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem 2.6rem;
+    transition: all 0.2s ease;
+}
+section[class="third-section"] .main-content a:hover{
+    background-color: #7a6841;
+}
+/* ================== third section end ================== */
+
+/* ================== footer start ================== */
+footer{
+    background-color: #35302d;
+    height: fit-content;
+}
+footer .footer-content{
+    display: flex;
+    padding: 3rem 7rem;
+    gap: 2rem;
+    color: #ffffff;
+    align-items: start;
+}
+footer .footer-content .first{
+    margin-top: 4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+}
+footer .footer-content .first h3{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+footer .footer-content .first p{
+    font-size: 1rem;
+    font-weight: 350;
+    color: #AC946E;
+}
+
+footer .footer-content .second{
+    margin-top: 4rem;
+    flex: 1.6;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+}
+footer .footer-content .second h3{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+footer .footer-content .second p{
+    font-size: 0.9rem;
+    font-weight: 350;
+}
+
+footer .footer-content .third{
+    flex: 1.3;
+    display: flex;
+    justify-content: center;
+}
+footer .footer-content .third img{
+    width: 80%;
+}
+
+footer hr{
+    width: 100%;
+    border: 0;
+    border-top: 0.01px solid #b3aaaa;
+}
+footer .foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7rem;
+    background-color: #332b28;
+    color: #ffffff;
+}
+footer .foot .cprght p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+footer .foot .smd {
+    display: flex;
+    gap: 1rem;
+}
+footer .foot .smd a{
+    text-decoration: none;
+    width:35px;
+    height:35px;
+    border-radius: 100%;
+    background-color: #b59f6b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+footer .foot .smd a:hover{
+    background-color: #7a6841;
+}
+
+footer .foot .smd a i{
+    color: #ffffff;
+}
+/* ================== footer end ================== */
