@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", function () {
     function checkScreenWidth() {
         if (window.innerWidth < 1239) {
-            document.body.innerHTML = '<div class="small-screen-message">Maaf, untuk saat ini hanya tersedia tampilan desktop saja</div>';
+            document.body.innerHTML = '<div class="small-screen-message">Maaf, untuk saat ini hanya tersedia pada screen diatas 1240 saja</div>';
         }
     }    
     checkScreenWidth();
