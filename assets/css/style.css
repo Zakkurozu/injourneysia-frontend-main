@@ -34,7 +34,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 11px 7rem;
+    padding: 18px 7rem;
     display: flex;
     justify-content: space-between;
     background-color: transparent;
@@ -91,8 +91,8 @@ nav ul li a[class="btn-sgin"]{
     text-decoration: none;
     color: #b4a06b;
     border:1px solid #b4a06b;
-    border-radius: 5px;
-    padding: 0.3rem 1.1rem;
+    border-radius: 3px;
+    padding: 0.2rem 1rem;
     transition: all 0.2s;
 }
 nav ul li a[class="btn-sgin"]:hover{
@@ -184,15 +184,15 @@ main .main-content a{
     font-weight: 350;
     width: fit-content;
     align-self: center;
-    background-color: #b4a06b;
+    background-color: #695a38;
     color: #ffffff;
-    border:1px solid #ffffff;
-    border-radius: 5px;
+    border: 0.5px solid #ffffff;
+    border-radius: 2px;
     padding: 0.5rem 1.2rem;
     transition:all 0.2s;
 }
 main .main-content a:hover{
-    background-color: #7a6841;
+    background-color: #53472b;
 }
 /* ================== hero end ================== */
 
@@ -224,7 +224,7 @@ section[class="first-section"] .content .container .kiri {
 section[class="first-section"] .content .container .kiri img{
     margin: auto;
     height: 100%;
-    width: 82%;
+    width: 77%;
 }
 
 section[class="first-section"] .content .container .kanan {
