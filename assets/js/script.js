@@ -1,21 +1,51 @@
+// toogle menu navbar
+let menu = document.getElementById('menulist');
+let toggleMenuIcon = document.getElementById('togglemenu');
+menu.style.maxHeight = "0px";
+let menuOpen = false;
+
+// fungsi toggle menu
+function togglemenu() {
+    if (menu.style.maxHeight == "0px") {
+        menu.style.maxHeight = "16rem";
+        menuOpen = true;
+    } else {
+        menu.style.maxHeight = "0px";
+        menuOpen = false;
+    }
+}
+
+toggleMenuIcon.addEventListener('click', togglemenu);
+const menuLinks = document.querySelectorAll('#menulist li a');
+
+// event listener setiap link
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.style.maxHeight = "0px";
+        menuOpen = false;
+    });
+});
+
 // funtion scrolled
 document.addEventListener('scroll', function() {
-    //header dan hero
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    console.log(`scrollTop: ${scrollTop}`); // Debugging:
+    
     const header = document.getElementById('header');
     const hero = document.getElementById('home');
 
-    //posisi scroll dan offset
-    const heroOffsetTop = hero.getBoundingClientRect().top + window.scrollY;
-    const scrollTop = window.scrollY;
-
-    // tambah/hapus kelas scrolled header
-    if (scrollTop > heroOffsetTop) {
+    const heroOffsetTop = hero.offsetTop;
+    console.log(`heroOffsetTop: ${heroOffsetTop}`); // Debugging
+    
+    if ( scrollTop > heroOffsetTop || menuOpen) {
         header.classList.add('scrolled');
+        console.log("Scrolled class added"); // Debugging
     } else {
         header.classList.remove('scrolled');
+        console.log("Scrolled class removed"); // Debugging
     }
 
-    //navbar link
+    // atur link navbar sesuai dengan scroll position
     const sections = document.querySelectorAll('main, section');
     const navLinks = document.querySelectorAll('.nav-link');
     let currentSectionId = '';
@@ -31,7 +61,7 @@ document.addEventListener('scroll', function() {
         }
     });
 
-    // tambah/hapus kelas active link navbar
+    // tambah/hapus class `active` pada link navbar
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').includes(currentSectionId)) {
@@ -40,17 +70,17 @@ document.addEventListener('scroll', function() {
     });
 });
 
-// funtion video
+// fungsi video
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('background-video');
     video.playbackRate = 1.5;
 });
 
-// alert responsive
+// alert screen
 document.addEventListener("DOMContentLoaded", function () {
     function checkScreenWidth() {
-        if (window.innerWidth < 1239) {
-            document.body.innerHTML = '<div class="small-screen-message">Maaf, untuk saat ini hanya tersedia pada screen diatas 1240 saja</div>';
+        if (window.innerWidth > 431 && window.innerWidth < 1024) {
+            document.body.innerHTML = '<div class="small-screen-message">Maaf, untuk saat ini tampilan tidak tersedia pada screen ini :)</div>';
         }
     }    
     checkScreenWidth();
