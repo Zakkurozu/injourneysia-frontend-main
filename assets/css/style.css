@@ -1,15 +1,18 @@
 html {
     scroll-behavior: smooth;
+    font-family: 'poppins', rubik;
 }
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: poppins, sans-serif;
+    font-family: 'poppins', rubik;
 }
 
-/* ================== alert responsive ================== */
+
+
+/* ============ALERT========== */
 .small-screen-message {
     display: none;
     position: fixed;
@@ -27,17 +30,19 @@ html {
     text-align: center;
     z-index: 9999;
 }
+/* ============ALERT========== */
 
-/* ================== header start ================== */
+
+
+/* ============ HEADER ============= */
 header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 19px 7rem;
-    display: flex;
-    justify-content: space-between;
     background-color: transparent;
+    /* maaf, ternyata masih ada bug yang belum ketemu, hehe :) */
+    /* background-color: rgba(0, 0, 0, 0.5); */
     transition: background-color 0.5s ease-in-out;
     z-index: 1000;
 }
@@ -46,8 +51,16 @@ header.scrolled {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+nav{
+    padding: 2.5rem 4rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 h2{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -61,33 +74,29 @@ h2 span{
     color: #b4a06b;
 }
 
-nav{
-    display: flex;
-    justify-content: center;
-}
-
-nav ul{
-    margin: auto;
+ul{
+    /* margin: auto; */
+    align-items: center;
     display: flex;
     list-style-type: none;
     gap: 1.4rem;
 }
 
-nav ul li .nav-link{
+ul li .nav-link{
     text-decoration: none;
     font-weight: 350;
     color: #ffffff;
     transition: color 0.2s;
 }
-nav ul li .nav-link:hover{
+ul li .nav-link:hover{
     color: #b4a06b;
 }
-nav ul li .nav-link.active {
+ul li .nav-link.active {
     font-weight: 500;
     color: #b4a06b;
 }
 
-nav ul li a[class="btn-sgin"]{
+ul li a[class="btn-sgin"]{
     text-decoration: none;
     color: #b4a06b;
     border:1px solid #b4a06b;
@@ -95,14 +104,56 @@ nav ul li a[class="btn-sgin"]{
     padding: 0.2rem 1rem;
     transition: all 0.2s;
 }
-nav ul li a[class="btn-sgin"]:hover{
+ul li a[class="btn-sgin"]:hover{
     color: #ffffff;
     background-color: #b4a06b;
     border:1px solid #ffffff;
 }
-/* ================== header end ================== */
 
-/* ================== hero start ================== */
+.menu-icon{
+    color: #ffffff;
+    font-size: 1.3rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header{
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease-in-out;
+        z-index: 1000;
+    }
+    #menulist{
+        transition: all 0.5s ease-in-out;
+    }
+    nav{
+        padding: 0 2rem;
+    }
+    nav ul{
+        position: absolute;
+        top: 3.5rem;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        gap:0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 1.2rem;
+    }
+    .menu-icon{
+        display: block;
+    }
+    .menu-icon:active{
+        color: #a8a8a8;
+    }
+}
+/* ============ HEADER END ============= */
+
+
+
+/* ============ HERO ============= */
 main {
     position: relative;
     height: 100vh;
@@ -194,9 +245,34 @@ main .main-content a{
 main .main-content a:hover{
     background-color: #53472b;
 }
-/* ================== hero end ================== */
 
-/* ================== first section start ================== */
+@media (max-width: 431px) {
+    main .main-content {
+        max-width: 85%;
+    }
+    main .main-content h3 {
+        font-size: 1.5rem;
+    }
+    main .main-content p{
+        font-size: 1rem;
+    }
+
+    main .main-content .animate-text {
+        font-size: 0.9rem;
+    }
+    @keyframes typing{
+        from{width: 0 ;}
+        to { width: 100%; }
+    }
+    main .main-content hr{
+        width: 90%;
+    }
+}
+/* ================= HERO END ============= */
+
+
+
+/* ================= FIRST SECTION ============= */
 section[class="first-section"] {
     min-height: 100vh;
     display: flex;
@@ -257,9 +333,38 @@ section[class="first-section"] .content .container .kanan .isi p{
     font-style: italic;
     font-weight: 350;
 }
-/* ================== first section end ================== */
 
-/* ================== second section start ================== */
+@media (max-width: 431px) {
+    section[class="first-section"] .content .container {
+        flex-direction: column;
+        padding: 3rem 1rem;
+        row-gap: 4rem;
+    }
+    section[class="first-section"] .content .container .kiri {
+        order: 2;
+        width: 100%;
+    }
+    section[class="first-section"] .content .container .kiri img{
+        width: 80%;
+    }
+    section[class="first-section"] .content .container .kanan {
+        width: 100%;
+    }
+    section[class="first-section"] .content .container .kanan .isi {
+        width: 90%;
+    }
+    section[class="first-section"] .content .container .kanan .isi h3{
+        font-size: 1.5rem;
+    }
+    section[class="first-section"] .content .container .kanan .isi p{
+        font-size: 1rem;
+    }
+}
+/* ================= FIRST SECTION END ============= */
+
+
+
+/* ================= SECOND SECTION ============= */
 section[class="second-section"] {
     min-height: 100vh;
     padding: 6rem 7rem;
@@ -338,7 +443,6 @@ section[class="second-section"] .body .card:hover {
 section[class="second-section"] .body .card .kiri {
     position: relative;
     overflow: hidden;
-    background-color: yellow;
     width: 50%;
     height: 410px;
 }
@@ -496,9 +600,75 @@ section[class="second-section"] .body .part .links p::after {
     transform-origin: bottom right;
     transition: transform 0.5s ease-in-out;
 }
-/* ================== second section end ================== */
 
-/* ================== third section start ================== */
+@media (max-width: 431px) {
+    section[class="second-section"] {
+        padding: 4rem 0rem;
+    }
+    section[class="second-section"] .head {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    section[class="second-section"] .head h3 {
+        font-size: 1.5rem;
+    }
+    section[class="second-section"] .head p {
+        font-size: 0.9rem;
+    }
+
+    section[class="second-section"] .neck {
+        display: none;
+    }
+
+    section[class="second-section"] .body {
+        flex-direction: column;
+        row-gap: 0;
+        width: 100%;
+    }
+    section[class="second-section"] .body .part {
+            max-width: 100%;
+    }
+
+    section[class="second-section"] .body .card .kiri {
+        height: 350px;
+    }
+
+    section[class="second-section"] .body .card .kanan .content {
+        row-gap: 4px;
+        padding: 0.8rem 1rem;
+    }
+
+    section[class="second-section"] .body .card .kanan .content .kepala h3 {
+        font-size: 16px;
+    }
+    section[class="second-section"] .body .card .kanan .content .kepala p {
+        font-size: 14px;
+    }
+
+    section[class="second-section"] .body .card .kanan .content .deskripsi p {
+        font-size: 12px;
+    }
+    section[class="second-section"] .body .card .kanan .content .deskripsi a {
+        font-size: 14px;
+    }
+
+    section[class="second-section"] .body .card .kanan .content .location p {
+        font-size: 12px;
+    }
+
+    section[class="second-section"] .body .part .links{
+        padding: .8rem 0;
+        height: 400px;
+    }
+
+    section[class="second-section"] .body .part .links .link .link-layer p{
+        font-size: 1rem;
+    }
+}
+/* ================= SECOND SECTION END ============= */
+
+
+/* ================= THIRD SECTION ============== */
 section[class="third-section"] {
     background-image: url("../img/content/edwin-petrus-nR2Y5F1bC0I-unsplash.jpg");
     background-repeat: no-repeat;
@@ -560,12 +730,43 @@ section[class="third-section"] .main-content a{
 section[class="third-section"] .main-content a:hover{
     background-color: #7a6841;
 }
-/* ================== third section end ================== */
 
-/* ================== footer start ================== */
+@media (max-width: 431px) {
+    section[class="third-section"] {
+        height: 100vh;
+    }
+
+    section[class="third-section"] .resort-layers {
+        padding: 0 2rem;
+    }
+
+    section[class="third-section"] .main-content {
+        row-gap: 1.5rem;
+    }
+    section[class="third-section"] .main-content h3 {
+        font-size: 1.4rem;
+    }
+    section[class="third-section"] .main-content hr {
+        width: 90%;
+    }
+    section[class="third-section"] .main-content p i {
+        font-size: 1rem;
+    }
+    section[class="third-section"] .main-content a{
+        margin-top: 0.6rem;
+        font-size: 0.9rem;
+        border-radius: 3px;
+        padding: 0.4rem 2.1rem;
+    }
+}
+/* ================= THIRD SECTION END ============== */
+
+
+
+/* ================= FOOTER ============== */
 footer{
     background-color: #35302d;
-    height: fit-content;
+    /* height: fit-content; */
 }
 footer .footer-content{
     display: flex;
@@ -616,8 +817,11 @@ footer .footer-content .third{
     display: flex;
     justify-content: center;
 }
-footer .footer-content .third img{
+footer .footer-content .third .desk{
     width: 80%;
+}
+footer .footer-content .third .phn {
+    display: none;
 }
 
 footer hr{
@@ -661,4 +865,64 @@ footer .foot .smd a:hover{
 footer .foot .smd a i{
     color: #ffffff;
 }
-/* ================== footer end ================== */
+
+@media (max-width: 431px) {
+    footer .footer-content {
+        flex-direction: column;
+        padding: 3rem 2rem;
+        gap: 1.7rem;
+    }
+
+    footer .footer-content .first{
+        margin-top: 0;
+        flex: 1;
+    }
+    footer .footer-content .first h3 {
+        font-size: 1.1rem;
+    }
+    footer .footer-content .first p {
+        font-size: 0.9rem;
+    }
+
+    footer .footer-content .second{
+        margin-top: 0;
+        flex: 1;
+    }
+    footer .footer-content .second h3 {
+        font-size: 1.1rem;
+    }
+    footer .footer-content .second p {
+        font-size: 0.9rem;
+    }
+
+    footer .footer-content .third{
+        flex: 1;
+        width: 100%;
+    }
+    footer .footer-content .third .desk {
+        display: none;
+    }
+    footer .footer-content .third .phn {
+        justify-self: center;
+        display: block;
+        width: 90%;
+    }
+
+    footer .foot{
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        row-gap: 1rem;
+    }
+    footer .foot .cprght{
+        order: 2;
+    }
+    footer .foot .cprght p{
+        font-size: .8rem;
+        font-weight: 300;
+    }
+    footer .foot .smd {
+        gap: .7rem;
+    }
+}
+/* ================= FOOTER END ============== */
